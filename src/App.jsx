@@ -32,13 +32,14 @@ const docDefinition = {
 // const pdfMake = require('pdfmake/build/pdfmake');
 // const pdfFonts = require('pdfmake/build/vfs_fonts');
 
-const APPIIKEYY = "INSERT API KEY";
+const APPIIKEYY = "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";
 
 function App() {
   const configuration = new Configuration({
-    apiKey: APPIIKEYY,
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
+
   const [option, setOption] = useState({});
   const [result, setResult] = useState("");
   const [input, setInput] = useState("");
@@ -119,26 +120,14 @@ function App() {
         arr3.push(i);
       }
     }
-
-    // for (let i = arr1.length; i > -1; i--) {
-    //   if (arr1[i] != undefined) {
-    //     if (arr1[i].startsWith("Answer:")) {
-    //       let mhm = arr1.pop(i);
-    //       arr2.push(mhm);
-    //     }
-    //   }
-    // }
     console.log(arr1);
 
     console.log(arr2);
     setFullyRendered(arr1);
   };
 
-  const generateNumberedPDF = () => {
-    console.log("heyy");
-  };
-
   const doStuff = async () => {
+    console.log("trying ");
     let object = { ...option, prompt: input };
 
     const response = await openai.createCompletion(object);
