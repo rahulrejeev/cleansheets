@@ -35,7 +35,11 @@ const docDefinition = {
 // const pdfMake = require('pdfmake/build/pdfmake');
 // const pdfFonts = require('pdfmake/build/vfs_fonts');
 
+<<<<<<< Updated upstream
 const APPIIKEYY = "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";
+=======
+const APPIIKEYY = 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;
+>>>>>>> Stashed changes
 
 function App() {
   const configuration = new Configuration({

@@ -1,4 +1,5 @@
 import React from "react";
+import NavBar from "../NavBar";
 
 export default function Translation({
   doStuff,
@@ -10,6 +11,7 @@ export default function Translation({
   return (
     <div>
       <h1>QuickSheets</h1>
+      <NavBar />
       <textarea
         className="text-area"
         cols={55}
