@@ -9,9 +9,12 @@ export default function Translation({
   url,
 }) {
   return (
+    
     <div>
-      <h1>QuickSheets</h1>
       <NavBar />
+    
+      <h1>QuickSheets</h1>
+      
       <textarea
         className="text-area"
         cols={55}

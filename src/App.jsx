@@ -6,7 +6,7 @@ import { arrayItems } from "./AIOptions";
 import { useState } from "react";
 import pdfMake from "pdfmake/build/pdfmake";
 import vfs from "../fonts/vfs_fonts";
-import NavBar from "./NavBar";
+
 
 pdfMake.vfs = vfs;
 
@@ -35,15 +35,11 @@ const docDefinition = {
 // const pdfMake = require('pdfmake/build/pdfmake');
 // const pdfFonts = require('pdfmake/build/vfs_fonts');
 
-<<<<<<< Updated upstream
-const APPIIKEYY = "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";
-=======
-const APPIIKEYY = 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;
->>>>>>> Stashed changes
+const APPIIKEYY = "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";
 
 function App() {
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   const [option, setOption] = useState({});
@@ -160,11 +156,11 @@ function App() {
   };
 
   return (
+
     <div className="App">
       {Object.values(option).length === 0 ? (
         <OptionSelection arrayItems={arrayItems} selectOption={selectOption} />
       ) : (
-        
         <Translation
           doStuff={doStuff}
           setInput={setInput}
