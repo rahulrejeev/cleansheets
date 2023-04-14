@@ -10,7 +10,6 @@ import vfs from "../fonts/vfs_fonts";
 
 pdfMake.vfs = vfs;
 
-
 pdfMake.fonts = {
   NimbusSans: {
     normal: "NimbusSanL-Reg.otf",
@@ -35,7 +34,7 @@ const docDefinition = {
 // const pdfMake = require('pdfmake/build/pdfmake');
 // const pdfFonts = require('pdfmake/build/vfs_fonts');
 
-const APPIIKEYY = "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";
+const APPIIKEYY = "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";
 
 function App() {
   const configuration = new Configuration({

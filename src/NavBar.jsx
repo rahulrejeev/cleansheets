@@ -1,21 +1,18 @@
-import React from 'react';
-import './NavBar.css';
-import SearchBar from './SearchBar';
+import React from "react";
 
 
 function NavBar() {
   return (
-    <nav className="navbar">
-      <ul className="nav-links">
-        <li className="nav-item">
-          <a href="/">Home</a>
+    <nav>
+      <ul>
+        <li>
+          <h3>home</h3>
         </li>
-        <li className="nav-item">
-          <a href="/about">About</a>
+        <li>
+          <h3>about</h3>
         </li>
-        <li className="nav-item">
-          <a href="/contact">Contact</a>
-          <SearchBar />
+        <li>
+          <h3>contact</h3>
         </li>
       </ul>
     </nav>
@@ -23,4 +20,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
