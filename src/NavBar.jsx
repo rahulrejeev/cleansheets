@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import SearchBar from './SearchBar';
-import './SearchBar.css'
+
 
 function NavBar() {
   return (
