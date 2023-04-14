@@ -9,9 +9,9 @@ function NavBar() {
         <div className="logo">
           <img src={logo} alt="Logo" />
         <ul className = "center"> 
-          <h1>
-            Quick Sheets
-          </h1>
+        <div className="navbar-text">
+        <p>Quick Sheets</p>
+      </div>
         </ul>  
         </div>
         <ul className="nav-links">

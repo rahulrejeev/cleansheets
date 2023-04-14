@@ -34,11 +34,11 @@ const docDefinition = {
 // const pdfMake = require('pdfmake/build/pdfmake');
 // const pdfFonts = require('pdfmake/build/vfs_fonts');
 
-const APPIIKEYY = "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";
+const APPIIKEYY = "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";
 
 function App() {
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   const [option, setOption] = useState({});
