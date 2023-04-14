@@ -12,8 +12,6 @@ export default function Translation({
     
     <div>
       <NavBar />
-    
-      <h1>QuickSheets</h1>
       
       <textarea
         className="text-area"
