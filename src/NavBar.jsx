@@ -4,16 +4,19 @@ import './NavBar.css';
 
 function NavBar() {
   return (
-    <header>
+    <header className="header">
       <nav className="navbar">
+
         <div className="logo">
           <img src={logo} alt="Logo" />
-        <ul className = "center"> 
-        <div className="navbar-text">
-        <p>Quick Sheets</p>
-      </div>
-        </ul>  
         </div>
+
+    
+        <div className="navbar-text">
+          <p>Quick Sheets</p>
+        </div>
+        
+
         <ul className="nav-links">
           <li>
             <a href="/">Home</a>
@@ -25,6 +28,7 @@ function NavBar() {
             <a href="/contact">Contact</a>
           </li>
         </ul>
+
       </nav>
     </header>
   );

@@ -8,6 +8,7 @@ import pdfMake from "pdfmake/build/pdfmake";
 import vfs from "../fonts/vfs_fonts";
 
 
+
 pdfMake.vfs = vfs;
 
 pdfMake.fonts = {
@@ -34,11 +35,11 @@ const docDefinition = {
 // const pdfMake = require('pdfmake/build/pdfmake');
 // const pdfFonts = require('pdfmake/build/vfs_fonts');
 
-const APPIIKEYY = "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";
+const APPIIKEYY = "sk-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";
 
 function App() {
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "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",
   });
   const openai = new OpenAIApi(configuration);
   const [option, setOption] = useState({});

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   padding: 0.5rem 1rem;
   background-color: #fff;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -10,7 +11,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  
+ 
+}
+
+.header {
+  margin-bottom:100px;
+  margin-right: 500px;
 }
 
 
@@ -22,7 +29,7 @@
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 2rem;
 }
 
 .nav-links li:not(:last-child) {
@@ -41,14 +48,6 @@
   color: #0077b6;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  color: black;
-}
-
 .navbar-text {
   font-size: 1rem;
   font-weight: 800;
@@ -57,7 +56,9 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
   position: center;
+  flex-direction: row;
 }
 .navbar-text p {
   font-size: 3rem;
