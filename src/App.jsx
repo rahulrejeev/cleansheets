@@ -7,7 +7,6 @@ import { useState } from "react";
 import pdfMake from "pdfmake/build/pdfmake";
 import vfs from "../fonts/vfs_fonts";
 
-
 pdfMake.vfs = vfs;
 
 pdfMake.fonts = {
@@ -34,21 +33,22 @@ const docDefinition = {
 // const pdfMake = require('pdfmake/build/pdfmake');
 // const pdfFonts = require('pdfmake/build/vfs_fonts');
 
-const APPIIKEYY = "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";
-
 function App() {
-  const configuration = new Configuration({
-    apiKey: "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",
-  });
-  const openai = new OpenAIApi(configuration);
+  //moved config so had to move
+  // const openai = new OpenAIApi(configuration);
   const [option, setOption] = useState({});
   const [result, setResult] = useState("");
   const [input, setInput] = useState("");
   const [textResponse, setTextResponse] = useState("");
   const [renderedText, setRenderedText] = useState("");
+  const [APIVAL, setAPIVAL] = useState("");
 
   const [url, setUrl] = useState(null);
   const [fullyRendered, setFullyRendered] = useState([]);
+
+  // var configuration = new Configuration({
+  //   apiKey: APIVAL,
+  // });
 
   const docDefinition = {
     // content: [
@@ -96,21 +96,20 @@ function App() {
   //   pdfMake.createPdf(docDefinition).download('numbered.pdf');
   // }
 
-  const fixString = (gptResponse) => {
-    for (let i = 0; i < gptResponse.length; i++) {
-      let char = text.charAt(i);
-      if (char === "/") {
-        console.log(char);
-      }
-    }
-  };
-
   const fixString2 = (gptResponse) => {
+    var changedResult2 = gptResponse.replaceAll("$", "");
+
+    console.log(changedResult2);
+
     console.log("wagwan GGG");
-    const arr1 = gptResponse.split("\n");
-    for (let i = 0; i < arr1.length; i++) {
-      console.log(arr1[i]);
+    //this is the code for before we removed the dollar signs from latex code
+    //const arr1 = gptResponse.split("\n");
+    const arr1 = changedResult2.split("\n");
+
+    for (const element of arr1) {
+      console.log(element);
     }
+
     console.log(arr1);
 
     var arr2 = [];
@@ -121,26 +120,21 @@ function App() {
         arr3.push(i);
       }
     }
-
-    // for (let i = arr1.length; i > -1; i--) {
-    //   if (arr1[i] != undefined) {
-    //     if (arr1[i].startsWith("Answer:")) {
-    //       let mhm = arr1.pop(i);
-    //       arr2.push(mhm);
-    //     }
-    //   }
-    // }
     console.log(arr1);
 
     console.log(arr2);
     setFullyRendered(arr1);
   };
 
-  const generateNumberedPDF = () => {
-    console.log("heyy");
-  };
-
   const doStuff = async () => {
+    //placed configuration here for now
+    var configuration = new Configuration({
+      apiKey: APIVAL,
+    });
+
+    const openai = new OpenAIApi(configuration);
+
+    
     let object = { ...option, prompt: input };
 
     const response = await openai.createCompletion(object);
@@ -155,7 +149,6 @@ function App() {
   };
 
   return (
-
     <div className="App">
       {Object.values(option).length === 0 ? (
         <OptionSelection arrayItems={arrayItems} selectOption={selectOption} />
@@ -168,6 +161,8 @@ function App() {
           generateNumberedPDF={create}
           fixString2={fixString2}
           url={url}
+          setAPI={setAPIVAL}
+          api={APIVAL}
         />
       )}
     </div>
